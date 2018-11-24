@@ -39,8 +39,8 @@ namespace ShareX
             pbLogo.Image = ImageHelpers.ResizeImage(ShareXResources.Logo, 128, 128);
 
             StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
-            cbRunStartup.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
-            cbRunStartup.Enabled = state != StartupState.DisabledByUser && state != StartupState.DisabledByPolicy && state != StartupState.EnabledByPolicy;
+            cbRunStartup.Checked = state == StartupState.Enabled;
+            cbRunStartup.Enabled = state != StartupState.DisabledByUser;
 
             cbShellContextMenuButton.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();

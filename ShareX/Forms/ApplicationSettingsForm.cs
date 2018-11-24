@@ -259,19 +259,11 @@ namespace ShareX
             try
             {
                 StartupState state = StartupManagerSingletonProvider.CurrentStartupManager.State;
-                cbStartWithWindows.Checked = state == StartupState.Enabled || state == StartupState.EnabledByPolicy;
+                cbStartWithWindows.Checked = state == StartupState.Enabled;
 
                 if (state == StartupState.DisabledByUser)
                 {
                     cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text;
-                }
-                else if (state == StartupState.DisabledByPolicy)
-                {
-                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text;
-                }
-                else if (state == StartupState.EnabledByPolicy)
-                {
-                    cbStartWithWindows.Text = Resources.ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text;
                 }
                 else
                 {

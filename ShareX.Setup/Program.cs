@@ -64,7 +64,7 @@ namespace ShareX.Setup
             AppVeyorWindowsStoreRelease = AppVeyorWindowsStore | DownloadFFmpeg
         }
 
-        private static SetupJobs Job = SetupJobs.Stable;
+        private static SetupJobs Job = SetupJobs.AppVeyorWindowsStoreRelease;
         private static bool AppVeyor = false;
 
         private static string ParentDir => AppVeyor ? "." : @"..\..\..\";
