@@ -35,11 +35,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-#if WindowsStore
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-#endif
-
 namespace ShareX
 {
     internal static class Program
@@ -286,9 +281,6 @@ namespace ShareX
             DebugHelper.WriteLine("Running as elevated process: " + Helpers.IsAdministrator());
 
             SilentRun = CLI.IsCommandExist("silent", "s");
-#if WindowsStore
-            SilentRun = SilentRun || AppInstance.GetActivatedEventArgs()?.Kind == ActivationKind.StartupTask;
-#endif
 
 #if STEAM
             SteamFirstTimeConfig = CLI.IsCommandExist("SteamConfig");
