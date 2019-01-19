@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" IgnorableNamespaces="uap mp rescap">
+  <Identity Name="ae4d3f38-0402-4776-bdf4-a24f0ea0919d" Publisher="CN=yinyu" Version="1.0.1.0" />
+  <Properties>
+    <DisplayName>ShareX.WindowsAppPackage</DisplayName>
+    <PublisherDisplayName>yinyu</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.17763.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="ShareX" Executable="ShareX\ShareX.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="ShareX.WindowsAppPackage" Description="ShareX.WindowsAppPackage" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png">
+        </uap:DefaultTile>
+      </uap:VisualElements>
+      <Extensions>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="ShareX\ShareX.exe">
+          <desktop:FullTrustProcess>
+            <desktop:ParameterGroup GroupId="ShareByJson" Parameters="-sharebyjson" />
+          </desktop:FullTrustProcess>
+        </desktop:Extension>
+        <uap:Extension Category="windows.shareTarget" Executable="ShareX.App.exe" EntryPoint="App">
+          <uap:ShareTarget Description="Share to ShareX">
+            <uap:SupportedFileTypes>
+              <uap:SupportsAnyFileType />
+            </uap:SupportedFileTypes>
+            <uap:DataFormat>Text</uap:DataFormat>
+            <uap:DataFormat>StorageItems</uap:DataFormat>
+          </uap:ShareTarget>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>
