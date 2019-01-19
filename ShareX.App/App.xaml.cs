@@ -18,13 +18,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ShareX.App
 {
-
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {
-
         protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
         {
             create(args);
@@ -44,8 +42,7 @@ namespace ShareX.App
             {
                 shareOperation.ReportStarted();
                 var items = await shareOperation.Data.GetStorageItemsAsync();
-                fileShareTargetInfo.Paths = items.OfType<StorageFile>().Select(a => a.Path).ToList();
-                
+                fileShareTargetInfo.Paths = items.OfType<StorageFile>().Select(a => a.Path).ToList(); 
             }
             else
             {
@@ -140,8 +137,6 @@ namespace ShareX.App
                 rootFrame.Navigate(typeof(MainPage));
             }
 
-
-
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -179,7 +174,5 @@ namespace ShareX.App
             // Save application state and stop any background activity
             deferral.Complete();
         }
-
-
     }
 }

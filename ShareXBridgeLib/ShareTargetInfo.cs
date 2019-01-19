@@ -9,5 +9,4 @@ namespace ShareX.BridgeLib
         public IReadOnlyList<string> Paths { get; set; }
         public string Text { get; set; }
     }
-
 }

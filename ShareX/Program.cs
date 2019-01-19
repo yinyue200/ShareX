@@ -365,11 +365,8 @@ namespace ShareX
                         if(!cli.IsCommandExist("sharebyjson"))
                             MainForm.ForceActivate();
                     }
-
-
                     MainForm.UseCommandLineArgs(cli.Commands);
                 };
-
                 MainForm.InvokeSafe(d);
             }
         }

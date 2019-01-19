@@ -884,7 +884,6 @@ namespace ShareX
                 {
                     UploadManager.UploadFile(command.Command, taskSettings);
                 }
-
             }
         }
 
@@ -935,15 +934,13 @@ namespace ShareX
                         UploadManager.UploadText(sti.Text,taskSettings,true);
                         delfiles();
                     }
-
                 }
                 catch
                 {
                     delfiles();
                     MessageBox.Show(Resources.Program_Run_Error);
                 }
-            }
-            
+            }      
         }
 
         private bool CheckCLIHotkey(CLICommand command)
