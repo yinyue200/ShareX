@@ -630,9 +630,9 @@ Global
 		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.Steam|ARM64.ActiveCfg = WindowsStore|Any CPU
 		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.Steam|x64.ActiveCfg = WindowsStore|x64
 		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.Steam|x86.ActiveCfg = WindowsStore|x86
-		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|Any CPU.ActiveCfg = WindowsStore|Any CPU
-		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|Any CPU.Build.0 = WindowsStore|Any CPU
-		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|Any CPU.Deploy.0 = WindowsStore|Any CPU
+		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|Any CPU.ActiveCfg = WindowsStore|x64
+		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|Any CPU.Build.0 = WindowsStore|x64
+		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|Any CPU.Deploy.0 = WindowsStore|x64
 		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|ARM.ActiveCfg = WindowsStore|Any CPU
 		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|ARM.Build.0 = WindowsStore|Any CPU
 		{16ADEAD2-727D-4CEC-A99A-7F3269A9859E}.WindowsStore|ARM.Deploy.0 = WindowsStore|Any CPU
