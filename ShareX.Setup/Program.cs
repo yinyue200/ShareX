@@ -99,7 +99,6 @@ namespace ShareX.Setup
         public static string MakeAppxPath = @"C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe";
         public static string WindowsAppPackagePackagePath = Path.Combine(ParentDir, @"ShareX.WindowsAppPackage\AppPackages");
 
-
         private static void Main(string[] args)
         {
             Console.WriteLine("ShareX setup started.");
@@ -315,6 +314,7 @@ namespace ShareX.Setup
         private static void RebuildToGetAppx()
         {
             throw new NotImplementedException("Can't create an appx package");
+            //maybe do sth like msbuild ShareX.sln /p:AppxBundle=Never /p:Configuration=WindowsStore /p:Platform=x86 /p:AppxPackageSigningEnabled=false
         }
         private static string CreateATempFolder()
         {
@@ -341,7 +341,6 @@ namespace ShareX.Setup
                             appxfile = Directory.EnumerateFiles(tmpf).Where(a => a.EndsWith("appx", StringComparison.Ordinal)).SingleOrDefault();
                         }
                     }
-
                 }
             }
             if (appxfile == null)
