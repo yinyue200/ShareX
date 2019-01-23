@@ -77,7 +77,6 @@
     <None Include="Package.Debug.appxmanifest" Condition="'$(Configuration)'=='WindowsStore'">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ShareX.WindowsAppPackage_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\LargeTile.png" />
