@@ -44,6 +44,21 @@ namespace ShareX.App
                 var items = await shareOperation.Data.GetStorageItemsAsync();
                 fileShareTargetInfo.Paths = items.OfType<StorageFile>().Select(a => a.Path).ToList(); 
             }
+            else if (shareOperation.Data.Contains(StandardDataFormats.Bitmap))
+            {
+                shareOperation.ReportStarted();
+                var items = await shareOperation.Data.GetBitmapAsync();
+                var file = await (await Windows.Storage.ApplicationData.Current.TemporaryFolder.CreateFolderAsync("tmpbitmap", CreationCollisionOption.OpenIfExists))
+                    .CreateFileAsync(System.IO.Path.GetRandomFileName(), CreationCollisionOption.ReplaceExisting);
+                using (var stream=await items.OpenReadAsync())
+                {
+                    using(var wrt=await file.OpenAsync(FileAccessMode.ReadWrite))
+                    {
+                        await Windows.Storage.Streams.RandomAccessStream.CopyAsync(stream,wrt);
+                    }
+                }
+                fileShareTargetInfo.Paths = new string[] { file.Path };
+            }
             else
             {
                 return;
